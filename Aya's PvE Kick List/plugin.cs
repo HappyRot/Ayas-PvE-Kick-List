@@ -233,11 +233,14 @@ namespace AimsharpWow.Modules
                                             "354297, 356324, 356404, 356407, 355641, 353835, 347775, 347903, 350922, 357188, 354297, 355225, 355234, 357284, 357260, 351119, 352347, 356843, 355737, 358967, 366566, 300764, 300650," +
                                             "300171, 299588, 300414, 300514, 301689, 301088, 293729, 228255, 228239, 228025, 227987, 228011, 228019, 227420, 227543, 227341, 227917, 232115, 228280, 228277, 226316," +
 											"228625, 227823, 227800, 227545, 227616, 227542, 228606, 229307, 227592, 229714, 229083, 230084, 166335, 165122, 178155, 228254, 228700, 373747, 374743, 226344, 228278, 241808, 284219," +
-                                            "178154, 227776}";
+                                            "178154, 227776, 388392, 396812, 388392, 396812, 377389, 396640, 387843, 387955, 387910, 375602, 387564, 386546, 389804, 377488, 382249, 367500, 377950, 385029, 373804, 381770, 374544, " +
+                                            "374066, 374339, 374045, 374080, 389443, 395694, 374563, 385141, 374706, 375384, 375950, 377348, 377402, 387618, 378282, 372615, 395427, 372538, 384161, 382795, 384365, 386024, 387411, " + 
+                                            "387606, 376725, 384808, 373395, 373017, 392398, 392451, 385310, 375602, 386546, 387564, 373932, 386546, 369675, 369674, 369823, 369603, 369399, 369400, 211401, 211464, 207980, 208165, " +
+                                            "207881, 198595, 198959, 192288, 199726, 198750, 152818, 156776, 156722, 398206, 156718, 153524, 397888, 114646, 395859, 396073, 397914}";
 
-            string SpellsToKickCCMplus = "{332329, 332671, 332156, 334664, 326450, 325701, 331743, 322569, 324987, 325021, 320822, 321807, 321780, 320822, 334747, 338022, 328400, 328177, 336451, 328429, 328338, 329163, 321935, 324609,300777" +
-                                            "330586, 333540, 330532, 330694, 295985, 335528, 330822, 304254, 332181, 297966, 358328, 241687, 355915, 356031, 355057, 355132, 322169, 228279, 166398, 228603, 241828, 293827, 300436, 300087, 163966, 373570}";
-
+            string SpellsToKickCCMplus = "{332329, 332671, 332156, 334664, 326450, 325701, 331743, 322569, 324987, 325021, 320822, 321807, 321780, 320822, 334747, 338022, 328400, 328177, 336451, 328429, 328338, 329163, 321935, 324609, " +
+                                            "300777, 330586, 333540, 330532, 330694, 295985, 335528, 330822, 304254, 332181, 297966, 358328, 241687, 355915, 356031, 355057, 355132, 322169, 228279, 166398, 228603, 241828, 293827, 300436, " +
+                                            "300087, 163966, 373570, 383823, 387135, 153153}";
 
             string InRangeItem = "0";
             if (Class == "Monk" || Class == "Guardian Druid" || Class == "Death Knight" || Class == "Rogue" || Class == "Demon Hunter" || Class == "Warrior" || Class == "Paladin")
@@ -386,6 +389,115 @@ namespace AimsharpWow.Modules
         };
         int[] MythicPlus =
         { 
+        //Algeth'ar Academy
+        388392, //Monotonous Lecture
+        396812, //Mystic Blast
+        377389, //Call of the Flock
+        396640, //Healing Touch
+        387843, //Astral Bomb
+		387955, //Celestial Shield
+		387910, //Astral Whirlwind
+
+        //Azure Vault
+        375602, //Erratic Growth
+        387564, //Mystic Vapors
+        386546, //Waking Bane
+        389804, //Heavy Tome
+        377488, //Icy Bindings
+
+        //Brackenhide
+        382249, //Earth Bolt
+        367500, //Hideous Cackle
+        377950, //Greater Healing Rapids
+        385029, //Screech
+        373804, //Touch of Decay
+        381770, //Gushing Ooze
+        374544, //Burst of Decay
+
+        //Halls of Infusion
+        374066, //Earth Shield
+        374339, //Demoralizing Shout
+        374045, //Expulse
+        374080, //Blasting Gust
+        389443, //Purifying Blast
+        395694, //Elemental Focus
+        374563, //Dazzle
+        385141, //Thunderstorm
+        374706, //Pyretic Burst
+        375384, //Rumbling Earth
+        375950, //Ice Shards
+        377348, //Tidal Divergence
+        377402, //Aqueous Barrier
+        387618, //Infuse
+
+        //Neltharus
+        378282, //Molten Core
+        372615, //Ember Reach
+        395427, //Burning Roar
+        372538, //Melt
+        384161, //Mote of Combustion
+        382795, //Molten Barrier
+
+        //Nokhud
+        384365, //Disruptive Shout
+        386024, //Tempest
+        387411, //Death Bolt Volley
+        387606, //Dominate
+        376725, //Storm Bolt
+		384808, //Guardian Wind
+		383823, //Rally the Clan (CC to interrupt)
+		387135, //Arcing Strike (CC to interrupt)
+		373395, //Bloodcurdling Shout
+
+        //RLP
+        373017, //Roaring Blaze
+        392398, //Crackling Detonation
+        392451, //Flashfire
+        385310, //Lightning Bolt
+		375602, //Erratic Growth
+		386546, //Waking Bane
+		387564, //Mystic Vapors
+		373932, //Illusionary Bolt
+		386546, //Waking Bane
+
+        //Uldaman
+        369675, //Chain Lightning
+        369674, //Stone Spike
+        369823, //Spiked Carapace
+        369603, //Defensive Bulwark
+        369399, //Stone Bolt
+        369400, //Earthen Ward
+
+        //Court of Stars
+		211401, //Drifting Embers
+		211464, //Fel Detonation
+		207980, //Disintegration Beam
+		208165, //Withering Soul
+		207881, //Infernal Eruption
+
+		//Halls of Valor
+		198595, //Thunderous Bolt
+		198959, //Etch
+		192288, //Searing Light
+		199726, //Unruly Yell
+		198750, // Surge
+
+		//Shadowmoon Burial Grounds
+		152818, //Shadow Mend
+		153153, //Dark Communion (CC to interrupt)
+		156776, //Rending Voidlash
+		156722, //Void Bolt
+		398206, //Death Blast
+		156718, //Necrotic Burst
+		153524, //Plague Spit
+
+		//Temple of the Jade Serpent
+		397888, //Hydrolance
+		114646, //Haunting Gaze
+		395859, //Haunting Scream
+		396073, //Cat Nap
+		397914, //Defiling Mist
+
         //De Other Side 
         332329, //Devoted Sacrifice (CC to interrupt) 
         332671, //Bladestorm (CC to interrupt) 
