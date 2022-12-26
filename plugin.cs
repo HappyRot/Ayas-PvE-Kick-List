@@ -64,7 +64,7 @@ namespace AimsharpWow.Modules
             Settings.Add(new Setting("Kick at milliseconds remaining", 100, 1500, 1000));
             Settings.Add(new Setting("Kick channels after milliseconds", 50, 2000, 500));
             Settings.Add(new Setting("Minimum delay", 50, 2000, 500));
-            List<string> ClassList = new List<string>(new string[] { "Shaman", "Death Knight", "Guardian Druid", "Monk", "Mage", "Hunter", "Shadow Priest", "Rogue", "Demon Hunter", "Warrior", "Paladin", "Warlock" });
+            List<string> ClassList = new List<string>(new string[] { "Shaman", "Death Knight", "Guardian Druid", "Monk", "Mage", "Hunter", "Shadow Priest", "Rogue", "Demon Hunter", "Warrior", "Paladin", "Warlock", "Evoker" });
             Settings.Add(new Setting("Class", ClassList, "Monk"));
             Settings.Add(new Setting("Kick from OoC?", true));
             Settings.Add(new Setting("Use CC to interrupt?", true));
@@ -126,6 +126,7 @@ namespace AimsharpWow.Modules
             if (Class == "Demon Hunter")
             {
                 Interrupts.Add("Disrupt");
+                Interrupts.Add("S")
 				if (UseCC)
                 {
                     CCInterrupts.Add("Chaos Nova");
@@ -198,6 +199,10 @@ namespace AimsharpWow.Modules
 					CCInterrupts.Add("Intimidating Shout");           
                 }
             }
+            if (Class == "Evoker")
+            {
+                Interrupts.Add("Quell");//spellid  351338
+            }
             foreach (string Interrupt in Interrupts)
             {
                 Spellbook.Add(Interrupt);
@@ -244,7 +249,7 @@ namespace AimsharpWow.Modules
                                             "300087, 163966, 373570, 383823, 387135, 153153}";
 
             string InRangeItem = "0";
-            if (Class == "Monk" || Class == "Guardian Druid" || Class == "Death Knight" || Class == "Rogue" || Class == "Demon Hunter" || Class == "Warrior" || Class == "Paladin")
+            if (Class == "Evoker" || Class == "Monk" || Class == "Guardian Druid" || Class == "Death Knight" || Class == "Rogue" || Class == "Demon Hunter" || Class == "Warrior" || Class == "Paladin")
             {
                 InRangeItem = "32321";
             }
