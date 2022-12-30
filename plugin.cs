@@ -126,7 +126,7 @@ namespace AimsharpWow.Modules
             if (Class == "Demon Hunter")
             {
                 Interrupts.Add("Disrupt");
-                Interrupts.Add("S")
+                Interrupts.Add("S");
 				if (UseCC)
                 {
                     CCInterrupts.Add("Chaos Nova");
