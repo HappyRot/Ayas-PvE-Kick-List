@@ -7,7 +7,7 @@ using System.IO; // Used for Licensing
 using AimsharpWow.API; //needed to access Aimsharp API 
 using System.Net;
 using System.Management;
-
+//TODO SigilOfSilece
 namespace AimsharpWow.Modules
 {
     public class PvEKicks : Plugin
@@ -929,6 +929,7 @@ namespace AimsharpWow.Modules
         Stopwatch LassoTimer = new Stopwatch();
         public override void LoadSettings()
         {
+            
             Settings.Add(new Setting("Game Client Language", new List<string>()
             {
                 "English",
