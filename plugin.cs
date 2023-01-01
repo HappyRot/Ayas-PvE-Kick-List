@@ -12,6 +12,874 @@ namespace AimsharpWow.Modules
 {
     public class PvEKicks : Plugin
     {
+        private static string Language = "English";
+        #region translate
+        private static string Quell_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Unterdrücken";
+                case "Español":
+                    return "Sofocar";
+                case "Français":
+                    return "Apaisement";
+                case "Italiano":
+                    return "Sedazione";
+                case "Português Brasileiro":
+                    return "Supressão";
+                case "Русский":
+                    return "Подавление";
+                case "한국어":
+                    return "진압";
+                case "简体中文":
+                    return "镇压";
+                default:
+                    return "Quell";
+            }
+        }
+        private static string CounterShot_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Gegenschuss";
+                case "Español":
+                    return "Contradisparo";
+                case "Français":
+                    return "Tir de riposte";
+                case "Italiano":
+                    return "Tiro di Contrasto";
+                case "Português Brasileiro":
+                    return "Tiro Retaliatório";
+                case "Русский":
+                    return "Встречный выстрел";
+                case "한국어":
+                    return "반격의 사격";
+                case "简体中文":
+                    return "反制射击";
+                default:
+                    return "Counter Shot";
+            }
+        }
+        private static string Muzzle_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Maulkorb";
+                case "Español":
+                    return "Amordazar";
+                case "Français":
+                    return "Muselière";
+                case "Italiano":
+                    return "Museruola";
+                case "Português Brasileiro":
+                    return "Focinheira";
+                case "Русский":
+                    return "Намордник";
+                case "한국어":
+                    return "재갈";
+                case "简体中文":
+                    return "压制";
+                default:
+                    return "Muzzle";
+            }
+        }
+        private static string Intimidation_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Einschüchterung";
+                case "Español":
+                    return "Intimidación";
+                case "Français":
+                    return "Intimidation";
+                case "Italiano":
+                    return "Intimidazione";
+                case "Português Brasileiro":
+                    return "Intimidação";
+                case "Русский":
+                    return "Устрашение";
+                case "한국어":
+                    return "위협";
+                case "简体中文":
+                    return "胁迫";
+                default:
+                    return "Intimidation";
+            }
+        }
+        private static string Kick_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Tritt";
+                case "Español":
+                    return "Patada";
+                case "Français":
+                    return "Coup de pied";
+                case "Italiano":
+                    return "Calcio";
+                case "Português Brasileiro":
+                    return "Chute";
+                case "Русский":
+                    return "Пинок";
+                case "한국어":
+                    return "발차기";
+                case "简体中文":
+                    return "脚踢";
+                default:
+                    return "Kick";
+            }
+        }
+        private static string Gouge_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Solarplexus";
+                case "Español":
+                    return "Gubia";
+                case "Français":
+                    return "Suriner";
+                case "Italiano":
+                    return "Sfregio Oculare";
+                case "Português Brasileiro":
+                    return "Esfaquear";
+                case "Русский":
+                    return "Парализующий удар";
+                case "한국어":
+                    return "후려치기";
+                case "简体中文":
+                    return "凿击";
+                default:
+                    return "Gouge";
+            }
+        }
+        private static string KidneyShot_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Nierenhieb";
+                case "Español":
+                    return "Golpe en los riñones";
+                case "Français":
+                    return "Aiguillon perfide";
+                case "Italiano":
+                    return "Colpo ai Reni";
+                case "Português Brasileiro":
+                    return "Golpe no Rim";
+                case "Русский":
+                    return "Удар по почкам";
+                case "한국어":
+                    return "급소 가격";
+                case "简体中文":
+                    return "肾击";
+                default:
+                    return "Kidney Shot";
+            }
+        }
+        private static string Blind_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Blenden";
+                case "Español":
+                    return "Ceguera";
+                case "Français":
+                    return "Cécité";
+                case "Italiano":
+                    return "Accecamento";
+                case "Português Brasileiro":
+                    return "Cegar";
+                case "Русский":
+                    return "Ослепление";
+                case "한국어":
+                    return "실명";
+                case "简体中文":
+                    return "致盲";
+                default:
+                    return "Blind";
+            }
+        }
+        private static string Silence_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Stille";
+                case "Español":
+                    return "Silencio";
+                case "Français":
+                    return "Silence";
+                case "Italiano":
+                    return "Silenzio";
+                case "Português Brasileiro":
+                    return "Silêncio";
+                case "Русский":
+                    return "Безмолвие";
+                case "한국어":
+                    return "침묵";
+                case "简体中文":
+                    return "沉默";
+                default:
+                    return "Silence";
+            }
+        }
+        private static string Disrupt_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Unterbrechen";
+                case "Español":
+                    return "Interrumpir";
+                case "Français":
+                    return "Ébranlement";
+                case "Italiano":
+                    return "Distruzione";
+                case "Português Brasileiro":
+                    return "Interromper";
+                case "Русский":
+                    return "Прерывание";
+                case "한국어":
+                    return "분열";
+                case "简体中文":
+                    return "瓦解";
+                default:
+                    return "Disrupt";
+            }
+        }
+        private static string ChaosNova_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Chaosnova";
+                case "Español":
+                    return "Nova de caos";
+                case "Français":
+                    return "Nova du chaos";
+                case "Italiano":
+                    return "Nova del Caos";
+                case "Português Brasileiro":
+                    return "Nova do Caos";
+                case "Русский":
+                    return "Кольцо Хаоса";
+                case "한국어":
+                    return "혼돈의 회오리";
+                case "简体中文":
+                    return "混乱新星";
+                default:
+                    return "Chaos Nova";
+            }
+        }
+        private static string FelEruption_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Teufelseruption";
+                case "Español":
+                    return "Erupción vil";
+                case "Français":
+                    return "Éruption gangrenée";
+                case "Italiano":
+                    return "Vileruzione";
+                case "Português Brasileiro":
+                    return "Erupção Vil";
+                case "Русский":
+                    return "Извержение Скверны";
+                case "한국어":
+                    return "지옥 분출";
+                case "简体中文":
+                    return "邪能爆发";
+                default:
+                    return "Fel Eruption";
+            }
+        }
+        private static string Metamorphosis_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Metamorphose";
+                case "Español":
+                    return "Metamorfosis";
+                case "Français":
+                    return "Métamorphose";
+                case "Italiano":
+                    return "Metamorfosi Demoniaca";
+                case "Português Brasileiro":
+                    return "Metamorfose";
+                case "Русский":
+                    return "Метаморфоза";
+                case "한국어":
+                    return "탈태";
+                case "简体中文":
+                    return "恶魔变形";
+                default:
+                    return "Metamorphosis";
+            }
+        }
+        private static string Windshear_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Windschere";
+                case "Español":
+                    return "Viento esquilador";
+                case "Français":
+                    return "Cisailles";
+                case "Italiano":
+                    return "Tagliavento";
+                case "Português Brasileiro":
+                    return "Cortavento";
+                case "Русский":
+                    return "Ветрорез";
+                case "한국어":
+                    return "칼바람";
+                case "简体中文":
+                    return "风剪";
+                default:
+                    return "Windshear";
+            }
+        }
+        private static string CapacitorTotem_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Totem der Energiespeicherung";
+                case "Español":
+                    return "Tótem capacitador";
+                case "Français":
+                    return "Totem condensateur";
+                case "Italiano":
+                    return "Totem della Condensazione Elettrica";
+                case "Português Brasileiro":
+                    return "Totem Capacitor";
+                case "Русский":
+                    return "Тотем конденсации";
+                case "한국어":
+                    return "축전 토템";
+                case "简体中文":
+                    return "电能图腾";
+                default:
+                    return "Capacitor Totem";
+            }
+        }
+        private static string Rebuke_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Zurechtweisung";
+                case "Español":
+                    return "Reprimenda";
+                case "Français":
+                    return "Réprimandes";
+                case "Italiano":
+                    return "Predica";
+                case "Português Brasileiro":
+                    return "Repreensão";
+                case "Русский":
+                    return "Укор";
+                case "한국어":
+                    return "비난";
+                case "简体中文":
+                    return "责难";
+                default:
+                    return "Rebuke";
+            }
+        }
+        private static string AvengersShield_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Schild des Rächers";
+                case "Español":
+                    return "Escudo de vengador";
+                case "Français":
+                    return "Bouclier du vengeur";
+                case "Italiano":
+                    return "Scudo del Vendicatore";
+                case "Português Brasileiro":
+                    return "Escudo do Vingador";
+                case "Русский":
+                    return "Щит мстителя";
+                case "한국어":
+                    return "응징의 방패";
+                case "简体中文":
+                    return "复仇者之盾";
+                default:
+                    return "Avenger's Shield";
+            }
+        }
+        private static string HammerofJustice_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Hammer der Gerechtigkeit";
+                case "Español":
+                    return "Martillo de Justicia";
+                case "Français":
+                    return "Marteau de la justice";
+                case "Italiano":
+                    return "Martello della Giustizia";
+                case "Português Brasileiro":
+                    return "Martelo da Justiça";
+                case "Русский":
+                    return "Молот правосудия";
+                case "한국어":
+                    return "심판의 망치";
+                case "简体中文":
+                    return "制裁之锤";
+                default:
+                    return "Hammer of Justice";
+            }
+        }
+        private static string MindFreeze_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Gedankenfrost";
+                case "Español":
+                    return "Helada mental";
+                case "Français":
+                    return "Gel de l'esprit";
+                case "Italiano":
+                    return "Gelo Mentale";
+                case "Português Brasileiro":
+                    return "Congelar Mente";
+                case "Русский":
+                    return "Заморозка разума";
+                case "한국어":
+                    return "정신 얼리기";
+                case "简体中文":
+                    return "心灵冰冻";
+                default:
+                    return "Mind Freeze";
+            }
+        }
+        private static string Asphyxiate_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Ersticken";
+                case "Español":
+                    return "Asfixiar";
+                case "Français":
+                    return "Asphyxier";
+                case "Italiano":
+                    return "Asfissia";
+                case "Português Brasileiro":
+                    return "Asfixiar";
+                case "Русский":
+                    return "Асфиксия";
+                case "한국어":
+                    return "어둠의 질식";
+                case "简体中文":
+                    return "窒息";
+                default:
+                    return "Asphyxiate";
+            }
+        }
+        private static string DeathGrip_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Todesgriff";
+                case "Español":
+                    return "Atracción letal";
+                case "Français":
+                    return "Poigne de la mort";
+                case "Italiano":
+                    return "Presa Mortale";
+                case "Português Brasileiro":
+                    return "Garra da Morte";
+                case "Русский":
+                    return "Хватка смерти";
+                case "한국어":
+                    return "죽음의 손아귀";
+                case "简体中文":
+                    return "死亡之握";
+                default:
+                    return "Death Grip";
+            }
+        }
+        private static string Strangulate_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Strangulieren";
+                case "Español":
+                    return "Estrangular";
+                case "Français":
+                    return "Strangulation";
+                case "Italiano":
+                    return "Strangolamento";
+                case "Português Brasileiro":
+                    return "Estrangular";
+                case "Русский":
+                    return "Удушение";
+                case "한국어":
+                    return "질식시키기";
+                case "简体中文":
+                    return "绞袭";
+                default:
+                    return "Strangulate";
+            }
+        }
+        private static string Gnaw_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Nagen";
+                case "Español":
+                    return "Roer";
+                case "Français":
+                    return "Ronger";
+                case "Italiano":
+                    return "Rosicchiamento";
+                case "Português Brasileiro":
+                    return "Mordisco";
+                case "Русский":
+                    return "Отгрызть";
+                case "한국어":
+                    return "물어뜯기";
+                case "简体中文":
+                    return "撕扯";
+                default:
+                    return "Gnaw";
+            }
+        }
+        private static string SkullBash_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Schädelstoß";
+                case "Español":
+                    return "Testarazo";
+                case "Français":
+                    return "Coup de crâne";
+                case "Italiano":
+                    return "Craniata";
+                case "Português Brasileiro":
+                    return "Esmagar Crânio";
+                case "Русский":
+                    return "Лобовая атака";
+                case "한국어":
+                    return "두개골 강타";
+                case "简体中文":
+                    return "迎头痛击";
+                default:
+                    return "Skull Bash";
+            }
+        }
+        private static string SolarBeam_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Sonnenstrahl";
+                case "Español":
+                    return "Rayo solar";
+                case "Français":
+                    return "Rayon solaire";
+                case "Italiano":
+                    return "Fascio Solare";
+                case "Português Brasileiro":
+                    return "Raio Solar";
+                case "Русский":
+                    return "Столп солнечного света";
+                case "한국어":
+                    return "태양 광선";
+                case "简体中文":
+                    return "日光术";
+                default:
+                    return "Solar Beam";
+            }
+        }
+        private static string MightyBash_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Mächtiger Hieb";
+                case "Español":
+                    return "Azote poderoso";
+                case "Français":
+                    return "Rossée puissante";
+                case "Italiano":
+                    return "Urto Vigoroso";
+                case "Português Brasileiro":
+                    return "Trombada Poderosa";
+                case "Русский":
+                    return "Мощное оглушение";
+                case "한국어":
+                    return "거센 강타";
+                case "简体中文":
+                    return "蛮力猛击";
+                default:
+                    return "Mighty Bash";
+            }
+        }
+        private static string FeralCharge_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Wilde Attacke";
+                case "Español":
+                    return "Carga feral";
+                case "Français":
+                    return "Charge farouche";
+                case "Italiano":
+                    return "Carica Ferina";
+                case "Português Brasileiro":
+                    return "Investida Feral";
+                case "Русский":
+                    return "Звериный рывок";
+                case "한국어":
+                    return "야성의 돌진";
+                case "简体中文":
+                    return "野性冲锋";
+                default:
+                    return "Feral Charge";
+            }
+        }
+        private static string SpellLock_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Zaubersperre";
+                case "Español":
+                    return "Bloqueo de hechizo";
+                case "Français":
+                    return "Verrou magique";
+                case "Italiano":
+                    return "Blocca Incantesimo";
+                case "Português Brasileiro":
+                    return "Bloquear Feitiço";
+                case "Русский":
+                    return "Запрет чар";
+                case "한국어":
+                    return "주문 잠금";
+                case "简体中文":
+                    return "法术封锁";
+                default:
+                    return "Spell Lock";
+            }
+        }
+        private static string OpticalBlast_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Augenstrahl";
+                case "Español":
+                    return "Explosión óptica";
+                case "Français":
+                    return "Déflagration optique";
+                case "Italiano":
+                    return "Detonazione Ottica";
+                case "Português Brasileiro":
+                    return "Impacto Óptico";
+                case "Русский":
+                    return "Оптический удар";
+                case "한국어":
+                    return "안구 광선";
+                case "简体中文":
+                    return "眼棱爆炸";
+                default:
+                    return "Optical Blast";
+            }
+        }
+        private static string Counterspell_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Gegenzauber";
+                case "Español":
+                    return "Contrahechizo";
+                case "Français":
+                    return "Contresort";
+                case "Italiano":
+                    return "Controincantesimo";
+                case "Português Brasileiro":
+                    return "Contrafeitiço";
+                case "Русский":
+                    return "Антимагия";
+                case "한국어":
+                    return "마법 차단";
+                case "简体中文":
+                    return "法术反制";
+                default:
+                    return "Counterspell";
+            }
+        }
+        private static string SpearHandStrike_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Speerhandstoß";
+                case "Español":
+                    return "Golpe de mano de lanza";
+                case "Français":
+                    return "Pique de main";
+                case "Italiano":
+                    return "Compressione Tracheale";
+                case "Português Brasileiro":
+                    return "Golpe Mão de Lança";
+                case "Русский":
+                    return "Рука-копье";
+                case "한국어":
+                    return "손날 찌르기";
+                case "简体中文":
+                    return "切喉手";
+                default:
+                    return "Spear Hand Strike";
+            }
+        }
+        private static string Paralysis_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Paralyse";
+                case "Español":
+                    return "Parálisis";
+                case "Français":
+                    return "Paralysie";
+                case "Italiano":
+                    return "Paralisi";
+                case "Português Brasileiro":
+                    return "Paralisia";
+                case "Русский":
+                    return "Паралич";
+                case "한국어":
+                    return "마비";
+                case "简体中文":
+                    return "分筋错骨";
+                default:
+                    return "Paralysis";
+            }
+        }
+        private static string LegSweep_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Fußfeger";
+                case "Español":
+                    return "Barrido de pierna";
+                case "Français":
+                    return "Balayement de jambe";
+                case "Italiano":
+                    return "Calcio a Spazzata";
+                case "Português Brasileiro":
+                    return "Rasteira";
+                case "Русский":
+                    return "Круговой удар ногой";
+                case "한국어":
+                    return "팽이 차기";
+                case "简体中文":
+                    return "扫堂腿";
+                default:
+                    return "Leg Sweep";
+            }
+        }
+        private static string Pummel_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Zuschlagen";
+                case "Español":
+                    return "Zurrar";
+                case "Français":
+                    return "Volée de coups";
+                case "Italiano":
+                    return "Pugno Diversivo";
+                case "Português Brasileiro":
+                    return "Murro";
+                case "Русский":
+                    return "Зуботычина";
+                case "한국어":
+                    return "들이치기";
+                case "简体中文":
+                    return "拳击";
+                default:
+                    return "Pummel";
+            }
+        }
+        private static string StormBolt_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Sturmblitz";
+                case "Español":
+                    return "Descarga tormentosa";
+                case "Français":
+                    return "Éclair de tempête";
+                case "Italiano":
+                    return "Dardo della Tempesta";
+                case "Português Brasileiro":
+                    return "Seta Tempestuosa";
+                case "Русский":
+                    return "Удар громовержца";
+                case "한국어":
+                    return "폭풍망치";
+                case "简体中文":
+                    return "风暴之锤";
+                default:
+                    return "Storm Bolt";
+            }
+        }
+        private static string IntimidatingShout_SpellName()
+        {
+            switch (Language)
+            {
+                case "Deutsch":
+                    return "Drohruf";
+                case "Español":
+                    return "Grito intimidador";
+                case "Français":
+                    return "Cri d’intimidation";
+                case "Italiano":
+                    return "Urlo Intimidatorio";
+                case "Português Brasileiro":
+                    return "Brado Intimidador";
+                case "Русский":
+                    return "Устрашающий крик";
+                case "한국어":
+                    return "위협의 외침";
+                case "简体中文":
+                    return "破胆怒吼";
+                default:
+                    return "Intimidating Shout";
+            }
+        }
+
+        #endregion
         bool authorized = true;
         public class Enemy
         {
@@ -61,6 +929,18 @@ namespace AimsharpWow.Modules
         Stopwatch LassoTimer = new Stopwatch();
         public override void LoadSettings()
         {
+            Settings.Add(new Setting("Game Client Language", new List<string>()
+            {
+                "English",
+                "Deutsch",
+                "Español",
+                "Français",
+                "Italiano",
+                "Português Brasileiro",
+                "Русский",
+                "한국어",
+                "简体中文"
+            }, "English"));
             Settings.Add(new Setting("Kick at milliseconds remaining", 100, 1500, 1000));
             Settings.Add(new Setting("Kick channels after milliseconds", 50, 2000, 500));
             Settings.Add(new Setting("Minimum delay", 50, 2000, 500));
@@ -89,6 +969,7 @@ namespace AimsharpWow.Modules
             if (authorized)
             {
             }
+            Language = GetDropDown("Game Client Language");
             Class = GetDropDown("Class");
             OOCKicks = GetCheckBox("Kick from OoC?");
             UseCC = GetCheckBox("Use CC to interrupt?");
@@ -102,105 +983,105 @@ namespace AimsharpWow.Modules
             Aimsharp.PrintMessage("will make the bot not kick anything for the next 5 seconds.");
             if (Class == "Hunter")
             {
-                Interrupts.Add("Counter Shot");
-                Interrupts.Add("Muzzle");
+                Interrupts.Add(CounterShot_SpellName());
+                Interrupts.Add(Muzzle_SpellName());
                 if (UseCC)
                 {
-                    CCInterrupts.Add("Intimidation");
+                    CCInterrupts.Add(Intimidation_SpellName());
                 }
             }
             if (Class == "Rogue")
             {
-                Interrupts.Add("Kick");
+                Interrupts.Add(Kick_SpellName());
 				if (UseCC)
                 {
-                    CCInterrupts.Add("Gouge");
-					CCInterrupts.Add("Kidney Shot");
-					CCInterrupts.Add("Blind");
+                    CCInterrupts.Add(Gouge_SpellName());
+					CCInterrupts.Add(KidneyShot_SpellName());
+					CCInterrupts.Add(Blind_SpellName());
 				}
             }
             if (Class == "Shadow Priest")
             {
-                Interrupts.Add("Silence");
+                Interrupts.Add(Silence_SpellName());
             }
             if (Class == "Demon Hunter")
             {
-                Interrupts.Add("Disrupt");
+                Interrupts.Add(Disrupt_SpellName());
 				if (UseCC)
                 {
-                    CCInterrupts.Add("Chaos Nova");
-                    CCInterrupts.Add("Fel Eruption");
-					CCInterrupts.Add("Metamorphosis");
+                    CCInterrupts.Add(ChaosNova_SpellName());
+                    CCInterrupts.Add(FelEruption_SpellName());
+					CCInterrupts.Add(Metamorphosis_SpellName());
             }
             }
             if (Class == "Shaman")
             {
-                Interrupts.Add("Wind Shear");
+                Interrupts.Add(Windshear_SpellName());
                 if (UseCC)
                 {
-                    CCInterrupts.Add("Capacitor Totem");
+                    CCInterrupts.Add(CapacitorTotem_SpellName());
                 }
             }
             if (Class == "Paladin")
             {
-                Interrupts.Add("Rebuke");
-                Interrupts.Add("Avenger's Shield");
+                Interrupts.Add(Rebuke_SpellName());
+                Interrupts.Add(AvengersShield_SpellName());
 				if (UseCC)
                 {
-                    CCInterrupts.Add("Hammer of Justice");
+                    CCInterrupts.Add(HammerofJustice_SpellName());
                 }
             }
             if (Class == "Death Knight")
             {
-                Interrupts.Add("Mind Freeze");
+                Interrupts.Add(MindFreeze_SpellName());
                 if (UseCC)
                 {
-                    CCInterrupts.Add("Asphyxiate");
-                    CCInterrupts.Add("Death Grip");
-					CCInterrupts.Add("Strangulate");
-					CCInterrupts.Add("Gnaw");
+                    CCInterrupts.Add(Asphyxiate_SpellName());
+                    CCInterrupts.Add(DeathGrip_SpellName());
+					CCInterrupts.Add(Strangulate_SpellName());
+					CCInterrupts.Add(Gnaw_SpellName());
                 }
             }
             if (Class == "Guardian Druid")
             {
-                Interrupts.Add("Skull Bash");
-                Interrupts.Add("Solar Beam");
+                Interrupts.Add(SkullBash_SpellName());
+                Interrupts.Add(SolarBeam_SpellName());
                 if (UseCC)
                 {
-                    CCInterrupts.Add("Mighty Bash");
-					CCInterrupts.Add("Feral Charge");
+                    CCInterrupts.Add(MightyBash_SpellName());
+					CCInterrupts.Add(FeralCharge_SpellName());
 				}
             }
             if (Class == "Warlock")
             {
-                Interrupts.Add("Spell Lock");
-				Interrupts.Add("Optical Blast");
+                Interrupts.Add(SpellLock_SpellName());
+				Interrupts.Add(OpticalBlast_SpellName());
             }
             if (Class == "Mage")
             {
-                Interrupts.Add("Counterspell");
+                Interrupts.Add(Counterspell_SpellName());
             }
             if (Class == "Monk")
             {
-                Interrupts.Add("Spear Hand Strike");
+                Interrupts.Add(SpearHandStrike_SpellName());
                 if (UseCC)
                 {
-                    CCInterrupts.Add("Paralysis");
-                    CCInterrupts.Add("Leg Sweep");
+                    CCInterrupts.Add(Paralysis_SpellName());
+                    CCInterrupts.Add(LegSweep_SpellName());
                 }
             }
             if (Class == "Warrior")
             {
-                Interrupts.Add("Pummel");
+                Interrupts.Add(Pummel_SpellName());
 				if (UseCC)
                 {
-                    CCInterrupts.Add("Storm Bolt");
-					CCInterrupts.Add("Intimidating Shout");           
+                    CCInterrupts.Add(StormBolt_SpellName());
+					CCInterrupts.Add(IntimidatingShout_SpellName());           
                 }
             }
             if (Class == "Evoker")
             {
-                Interrupts.Add("Quell");//spellid  351338
+                Interrupts.Add(Quell_SpellName());
             }
             foreach (string Interrupt in Interrupts)
             {
