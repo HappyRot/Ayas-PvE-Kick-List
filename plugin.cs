@@ -1284,14 +1284,12 @@ namespace AimsharpWow.Modules
         387843, //Astral Bomb
 		387955, //Celestial Shield
 		387910, //Astral Whirlwind
-
         //Azure Vault
         375602, //Erratic Growth
         387564, //Mystic Vapors
         386546, //Waking Bane
         389804, //Heavy Tome
         377488, //Icy Bindings
-
         //Brackenhide
         382249, //Earth Bolt
         367500, //Hideous Cackle
@@ -1300,7 +1298,6 @@ namespace AimsharpWow.Modules
         373804, //Touch of Decay
         381770, //Gushing Ooze
         374544, //Burst of Decay
-
         //Halls of Infusion
         374066, //Earth Shield
         374339, //Demoralizing Shout
@@ -1316,7 +1313,6 @@ namespace AimsharpWow.Modules
         377348, //Tidal Divergence
         377402, //Aqueous Barrier
         387618, //Infuse
-
         //Neltharus
         378282, //Molten Core
         372615, //Ember Reach
@@ -1324,7 +1320,6 @@ namespace AimsharpWow.Modules
         372538, //Melt
         384161, //Mote of Combustion
         382795, //Molten Barrier
-
         //Nokhud
         384365, //Disruptive Shout
         386024, //Tempest
@@ -1335,7 +1330,6 @@ namespace AimsharpWow.Modules
 		383823, //Rally the Clan (CC to interrupt)
 		387135, //Arcing Strike (CC to interrupt)
 		373395, //Bloodcurdling Shout
-
         //RLP
         373017, //Roaring Blaze
         392398, //Crackling Detonation
@@ -1346,7 +1340,6 @@ namespace AimsharpWow.Modules
 		387564, //Mystic Vapors
 		373932, //Illusionary Bolt
 		386546, //Waking Bane
-
         //Uldaman
         369675, //Chain Lightning
         369674, //Stone Spike
@@ -1354,21 +1347,23 @@ namespace AimsharpWow.Modules
         369603, //Defensive Bulwark
         369399, //Stone Bolt
         369400, //Earthen Ward
-
         //Court of Stars
 		211401, //Drifting Embers
 		211464, //Fel Detonation
 		207980, //Disintegration Beam
 		208165, //Withering Soul
 		207881, //Infernal Eruption
-
+        211401, //drifting-embers
+        397892, //scream-of-pain
+        207980, //disintegration-beam
+        208165, //withering-soul
 		//Halls of Valor
 		198595, //Thunderous Bolt
 		198959, //Etch
 		192288, //Searing Light
 		199726, //Unruly Yell
-		198750, // Surge
-
+		198750, //Surge        
+        215433, //holy-radiance
 		//Shadowmoon Burial Grounds
 		152818, //Shadow Mend
 		153153, //Dark Communion (CC to interrupt)
@@ -1377,14 +1372,12 @@ namespace AimsharpWow.Modules
 		398206, //Death Blast
 		156718, //Necrotic Burst
 		153524, //Plague Spit
-
 		//Temple of the Jade Serpent
 		397888, //Hydrolance
 		114646, //Haunting Gaze
 		395859, //Haunting Scream
 		396073, //Cat Nap
 		397914, //Defiling Mist
-
         //De Other Side 
         332329, //Devoted Sacrifice (CC to interrupt) 
         332671, //Bladestorm (CC to interrupt) 
